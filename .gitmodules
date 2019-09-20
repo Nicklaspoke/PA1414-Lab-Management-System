@@ -1,0 +1,3 @@
+[submodule "SQL"]
+	path = SQL
+	url = git@github.com:Nicklaspoke/PA1414-Lab-Management-System-Database-SQL.git
