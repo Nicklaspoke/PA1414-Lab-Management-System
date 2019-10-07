@@ -1,0 +1,30 @@
+{
+    "name": "pa1414-lab-management-system-frontend",
+    "version": "1.0.0",
+    "description": "Frontend part of the lab management system",
+    "main": "index.js",
+    "scripts": {
+        "dev": "next",
+        "build": "next build",
+        "start": "next start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Nicklaspoke/PA1414-Lab-Management-System.git"
+    },
+    "keywords": [
+        "next.js"
+    ],
+    "author": "Nicklaspoke",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Nicklaspoke/PA1414-Lab-Management-System/issues"
+    },
+    "homepage": "https://github.com/Nicklaspoke/PA1414-Lab-Management-System#readme",
+    "dependencies": {
+        "isomorphic-unfetch": "^3.0.0",
+        "next": "^9.0.8",
+        "react": "^16.10.2",
+        "react-dom": "^16.10.2"
+    }
+}
