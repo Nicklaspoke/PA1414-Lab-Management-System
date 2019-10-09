@@ -1,0 +1,19 @@
+html {
+    font-size: 100%;
+}
+
+body {
+    color: $fontColor;
+    line-height: $lineHeight;
+}
+
+h1 {
+    font-family: $fontHeader;
+    margin-bottom: $magicNumber * 2;
+}
+
+p {
+    font-family: $fontBody;
+    font-size: $defaultSize;
+    margin-bottom: $magicNumber;
+}

@@ -1,9 +1,17 @@
 import config from '../config/config.json';
 import fetch from 'isomorphic-unfetch';
 
+import MainLayout from '../components/MainLayout';
+import Navbar from '../components/Navbar';
+
+
 const Index = props => (
     <div>
+        <MainLayout>
+
         <h1>{props.message}</h1>
+
+        </MainLayout>
     </div>
 );
 

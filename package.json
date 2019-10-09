@@ -6,7 +6,8 @@
     "scripts": {
         "dev": "next",
         "build": "next build",
-        "start": "next start"
+        "start": "next start",
+        "style": "sass static/style/base.scss static/style.min.css"
     },
     "repository": {
         "type": "git",
@@ -22,9 +23,17 @@
     },
     "homepage": "https://github.com/Nicklaspoke/PA1414-Lab-Management-System#readme",
     "dependencies": {
+        "@zeit/next-css": "^1.0.1",
         "isomorphic-unfetch": "^3.0.0",
+        "jsonwebtoken": "^8.5.1",
         "next": "^9.0.8",
         "react": "^16.10.2",
         "react-dom": "^16.10.2"
+    },
+    "devDependencies": {
+        "css-loader": "^3.2.0",
+        "file-loader": "^4.2.0",
+        "sass": "^1.23.0",
+        "style-loader": "^1.0.0"
     }
 }
