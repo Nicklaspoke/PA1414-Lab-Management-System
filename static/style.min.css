@@ -367,9 +367,10 @@ p {
 /* Navigation styling */
 .navbar {
   margin: 1em auto;
+  background-color: red;
 }
 .navbar a {
-  margin: auto;
+  margin: 0.5em auto;
 }
 
 /*# sourceMappingURL=style.min.css.map */

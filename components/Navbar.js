@@ -1,15 +1,15 @@
 import Link from 'next/link';
 
 const Navbar = () => (
-    <div className="navbar">
+    <nav className="navbar">
         <Link href="/">
-            <a>Home</a>
+            <button>Home</button>
         </Link>
 
         <Link href="/login">
-            <a>Login</a>
+            <button>Login</button>
         </Link>
-    </div>
+    </nav>
 )
 
 export default Navbar;

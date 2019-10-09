@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken');
 import fetch from 'isomorphic-unfetch';
 import Router from 'next/router';
 
+import MainLayout from '../components/MainLayout';
+
 import config from '../config/config.json';
 
 
@@ -18,6 +20,7 @@ let formData = {
 let displayErrorMessage = false
 
 const login = () => (
+    <MainLayout>
     <div className="formContainer">
         <form onSubmit={function (e) {handleSubmit(e)}}>
 
@@ -36,6 +39,7 @@ const login = () => (
             <input type="submit"></input>
         </form>
     </div>
+    </MainLayout>
 );
 
 async function handleSubmit(e) {

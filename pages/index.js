@@ -16,10 +16,24 @@ const Index = props => (
 );
 
 Index.getInitialProps = async function() {
-    const res = await fetch(`${config.apiAddr}/test`)
-    const data = await res.json();
+    const bodyData = {
+        "userId": "niko14",
+        "password": "CMC3BFF"
+    };
+    let data;
+    console.log(bodyData);
+    const res = await fetch(`${config.apiAddr}/login`, {
+        body: await JSON.stringify(bodyData),
+        headers: {
+            'content-type': 'application/json'
+        },
+        method: 'POST'
+    }).then(async function (responce) {
+        console.log(responce)
+        data = await responce.json();
+    });
 
-    console.log(data.message);
+    console.log(data);
 
     return data;
 }
