@@ -4,13 +4,13 @@
  * @author Nicklas König (niko14)
  */
 
-import Head from './Head';
 import Header from './Header';
-
+import cookies from 'next-cookies';
+import Router from 'next/router';
 import '../static/style.min.css';
 
 const MainLayout = props => (
-    <div>
+    <div className="site-wrapper">
         <Header />
         <div className="mainContainer">
             {props.children}
@@ -18,4 +18,11 @@ const MainLayout = props => (
     </div>
 );
 
+MainLayout.getInitialProps = async function {
+    const token = cookies().token
+
+    if(!token) {
+        Router.push('/login');
+    }
+}
 export default MainLayout;

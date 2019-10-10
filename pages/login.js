@@ -5,7 +5,7 @@
 const jwt = require('jsonwebtoken');
 import fetch from 'isomorphic-unfetch';
 import Router from 'next/router';
-
+import cookies from 'next-cookies';
 import MainLayout from '../components/MainLayout';
 
 import config from '../config/config.json';
@@ -17,10 +17,21 @@ let formData = {
     password: ""
 }
 
-let displayErrorMessage = false
+let errorDisplay = {
+    "titel": "",
+    "message": "",
+    "display": false
+}
 
 const login = () => (
     <MainLayout>
+    {errorDisplay.display ?
+    <div>
+        <h2>{errorDisplay.titel}</h2>
+        <p>{errorDisplay.message}</p>
+    </div>
+    : null}
+
     <div className="formContainer">
         <form onSubmit={function (e) {handleSubmit(e)}}>
 
@@ -43,6 +54,7 @@ const login = () => (
 );
 
 async function handleSubmit(e) {
+    errorDisplay.display = false;
     e.preventDefault();
     const res = await fetch(`http://127.0.0.1:1337/login`, {
         body: JSON.stringify(formData),
@@ -53,17 +65,24 @@ async function handleSubmit(e) {
     });
 
     const data = await res.json();
-    console.log(data);
-    const token = data.data.token
 
-    const decoded = jwt.decode(data.data.token)
-
-    console.log(decoded)
-
-    if (decoded.admin) {
-        Router.push('/adminDashboard', 'admin/dashboard');
+    if (data.errors) {
+        console.log(data.errors["details"]);
+        errorDisplay.titel = data.errors["title"];
+        errorDisplay.message = data.errors["details"];
+        errorDisplay.display = true;
+        console.log(errorDisplay);
+        Router.push("/login");
     } else {
-        Router.push('/userDashboard', 'user/dashboard');
+        const token = data.data.token
+        const decoded = jwt.decode(token);
+        document.cookie= `token=${token}; path=/`;
+
+        if (decoded.admin) {
+            Router.push('/adminDashboard', 'admin/dashboard');
+        } else {
+            Router.push('/userDashboard', 'user/dashboard');
+        }
     }
 }
 export default login;

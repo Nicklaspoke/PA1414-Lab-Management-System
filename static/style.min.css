@@ -353,24 +353,53 @@ p {
   margin-bottom: 1.4rem;
 }
 
-#__next {
+* {
+  box-sizing: border-box;
+}
+
+.site-wrapper {
   background-color: #fff;
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10%;
 }
 
 .mainContainer {
-  width: 90%;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: auto;
   background-color: aqua;
   min-height: 20em;
-  margin: auto;
 }
 
 /* Navigation styling */
 .navbar {
-  margin: 1em auto;
   background-color: red;
+  text-align: center;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 .navbar a {
-  margin: 0.5em auto;
+  color: #fff;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  margin: 0.2rem 0.8rem;
+  font-family: "Roboto", sans-serif;
+  border: 1px solid #ccc;
+  text-align: center;
+  border-radius: 0.2rem;
+  text-decoration: none;
+}
+.navbar ul {
+  list-style: none;
+  display: inline-block;
+}
+.navbar ul,
+.navbar li {
+  float: left;
 }
 
 /*# sourceMappingURL=style.min.css.map */
