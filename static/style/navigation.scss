@@ -1,23 +1,17 @@
 /* Navigation styling */
 
 .navbar {
-    background-color: red;
+    background-color: $trieteryColor;
     text-align: center;
-    grid-column-start: 2;
+    grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-start: auto;
+    grid-row-end: auto;
+    min-height: 50vh;
 
     a {
-        color: #fff;
-        display: inline-block;
-        padding: 0.4rem 1rem;
-        margin: 0.2rem 0.8rem;
-        font-family: $fontBody;
-        border: 1px solid #ccc;
-        text-align: center;
-        border-radius: 0.2rem;
-        text-decoration: none;
+        text-decoration: underline;
+
     }
 
     ul {
@@ -25,8 +19,8 @@
         display: inline-block;
     }
 
-    ul,
-    li {
-        float: left
-    }
+    // ul,
+    // li {
+    //     float: left
+    // }
 }

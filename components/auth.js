@@ -21,7 +21,9 @@ async function checkForAdmin() {
 
     const decoded = jwt.decode(token);
 
-    if (!decoed.admin) {
+
+
+    if (!decoded.admin) {
         Router.push('/user/dashboard');
     } else {
         Router.push('/admin/dashboard')
