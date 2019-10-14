@@ -1,3 +1,10 @@
+/**
+ * Index page
+ *
+ * @author Nicklas König (niko14)
+ */
+
+
 import config from '../config/config.json';
 import fetch from 'isomorphic-unfetch';
 
@@ -15,6 +22,7 @@ const Index = props => (
 );
 
 Index.getInitialProps = async function() {
+    let data;
     const res = await fetch(`${config.apiAddr}/test`, {
         headers: {
             'content-type': 'application/json'

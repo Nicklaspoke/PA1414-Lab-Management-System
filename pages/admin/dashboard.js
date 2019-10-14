@@ -1,13 +1,24 @@
 /**
  * Admin landing page/dashboard
+ *
+ * @author Nicklas König (niko14)
  */
+'use strict';
 
-import MainLayout from '../../components/MainLayout';
+import AdminMainLayout from '../../components/MainAdminLayout';
+import { auth } from '../../utils/auth';
 
-const dashboard = props => (
-    <MainLayout>
+const Dashboard = props => (
+    <AdminMainLayout>
         <h1>Admin dashboard</h1>
-    </MainLayout>
+    </AdminMainLayout>
 );
 
-export default dashboard;
+
+Dashboard.getInitialProps = async ctx => {
+    const token = await auth(ctx);
+    console.log(token);
+    return { token }
+}
+
+export default Dashboard;

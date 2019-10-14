@@ -1,6 +1,9 @@
 /**
  * Page for the login form of the page
+ *
+ * @author Nicklas König (niko14)
  */
+'use strict';
 
 const jwt = require('jsonwebtoken');
 import fetch from 'isomorphic-unfetch';
@@ -51,7 +54,7 @@ const login = () => (
         </form>
     </div>
 
-    <div class="infoLoginBox">
+    <div className="infoLoginBox">
         <h2>Welcome to the Login page for SERL-BTH Booking system</h2>
         <h3>Please login with your BTH user Id</h3>
         <p>If you don't have an account you can register and apply for one <Link href="/register"><a>here</a></Link></p>
@@ -71,13 +74,11 @@ async function handleSubmit(e) {
     });
 
     const data = await res.json();
-    console.log(data);
+
     if (data.errors) {
-        console.log(data.errors["details"]);
         errorDisplay.titel = data.errors["title"];
         errorDisplay.message = data.errors["details"];
         errorDisplay.display = true;
-        console.log(errorDisplay);
         Router.push("/login");
     } else {
         const token = data.data.token

@@ -1,21 +1,21 @@
 /**
- * Component file for the Main layout of the page
+ * Component file for the layout of the admin side of things
  *
- * @author Nicklas König (niko14)
+ * @auth Nicklas König (niko14)
  */
-
 import HeaderBanner from './HeaderBanner';
-import NavBar from './Navbar';
+import AdminNav from './AdminNav';
 
 import '../static/style.min.css';
 
-const MainLayout = props => (
+const MainAdminLayout = props => (
     <div className="site-wrapper">
         <HeaderBanner />
-        <NavBar />
+        <AdminNav />
         <div className="mainContainer">
             {props.children}
         </div>
     </div>
 );
-export default MainLayout;
+
+export default MainAdminLayout;

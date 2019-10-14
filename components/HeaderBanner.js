@@ -1,5 +1,7 @@
 /**
  * Common header component
+ *
+ * @author Nicklas König (niko14)
  */
 
 import Link from 'next/Link';

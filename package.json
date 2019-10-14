@@ -7,8 +7,10 @@
         "dev": "next",
         "build": "next build",
         "start": "next start",
-        "style": "sass static/style/base.scss static/style.min.css",
-        "style-watch": "sass --watch static/style/base.scss static/style.min.css --style compressed"
+        "style": "sass static/style/base.scss static/style.min.css --style compressed",
+        "style-watch": "sass --watch static/style/base.scss static/style.min.css --style compressed",
+        "lint": "eslint . --ext .js",
+        "lint-fix": "eslint --fix --ext .js"
     },
     "repository": {
         "type": "git",
@@ -34,9 +36,6 @@
         "react-dom": "^16.10.2"
     },
     "devDependencies": {
-        "css-loader": "^3.2.0",
-        "file-loader": "^4.2.0",
-        "sass": "^1.23.0",
-        "style-loader": "^1.0.0"
+        "sass": "^1.23.0"
     }
 }

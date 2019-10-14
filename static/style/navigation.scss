@@ -1,7 +1,7 @@
 /* Navigation styling */
 
 .navbar {
-    background-color: $trieteryColor;
+    background-color: $maneDarkAcent;
     text-align: center;
     grid-column-start: 1;
     grid-column-end: 2;
@@ -11,16 +11,17 @@
 
     a {
         text-decoration: underline;
+        text-align: center;
 
     }
 
     ul {
         list-style: none;
-        display: inline-block;
     }
 
-    // ul,
-    // li {
-    //     float: left
-    // }
+    ul,
+    li {
+        // float: left;
+        text-align: center;
+    }
 }
