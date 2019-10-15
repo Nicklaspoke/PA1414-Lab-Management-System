@@ -26,6 +26,14 @@ export const auth = async (ctx) => {
     //decode the token
     const decoded = await jwt.decode(token);
 
+    //Check if the token has expirered, fi so. send back to login
+    if (Date.now() >= decoded.exp * 1000) {
+        logout(ctx);
+        ctx.res.writeHead(302, { location: '/login' });
+        ctx.res.end();
+    }
+
+    // Check if admin claim to tthe route is valid
     if(ctx.pathname.includes('admin') && !decoded.admin) {
         ctx.res.writeHead(302, { location: '/user/dashboard' });
         ctx.res.end();
