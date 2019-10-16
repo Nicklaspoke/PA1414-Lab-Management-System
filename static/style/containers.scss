@@ -16,7 +16,7 @@
     grid-column-end: 11;
     grid-row-start: auto;
     grid-row-end: auto;
-    background-color: $maneColor;
+    background-color: $maneDarkAcent;
     min-height: 50vh;
 
     display: grid;
@@ -55,7 +55,7 @@
 .DashboardLeftUp {
     grid-column: 2 / 10;
     grid-row: 2 / 5;
-    background-color: pink;
+    background-color: $maneColor;
 
     h2 {
         text-align: center;
@@ -74,4 +74,9 @@
 
 .DashboardRightDown {
 
+}
+
+.bookingInfo {
+    grid-column: 2 / 10;
+    grid-row: 2 / 7;
 }

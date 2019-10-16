@@ -9,31 +9,27 @@ import AdminMainLayout from '../../components/MainAdminLayout';
 import { auth } from '../../utils/auth';
 import config from '../../config/config.json';
 import fetch from 'isomorphic-unfetch';
+import Link from 'next/link';
 
 const Dashboard = props => (
     <AdminMainLayout>
         {console.log(props)}
         <div className='DashboardLeftUp'>
-            <h2>Bookings</h2>
+            <h2>Bookings To Approve</h2>
             <table>
                 <tr>
                     <th>User Id</th>
                     <th>Eqipment Name</th>
-                    <th>Status</th>
                     <th>Booking Time</th>
-                    <th>Checkout Time</th>
-                    <th>Return Time</th>
                 </tr>
                 {props.bookings.map(booking => (
-                    <tr>
-                        <td>{booking.user_id}</td>
-                        <td>{booking.equipment_name}</td>
-                        <td>{booking.status}</td>
-                        <td>{booking.booking_time}</td>
-                        <td>{booking.checkout_time}</td>
-                        <td>{booking.return_time}</td>
-
-                    </tr>
+                    <Link href={`booking?id=${booking.id}`} as={`booking/${booking.id}`}>
+                            <tr>
+                                <td>{booking.user_id}</td>
+                                <td>{booking.equipment_name}</td>
+                                <td>{booking.booking_time}</td>
+                            </tr>
+                    </Link>
                 ))}
             </table>
         </div>
@@ -57,14 +53,16 @@ Dashboard.getInitialProps = async ctx => {
         },
         method: 'GET'
     }).then(async function (responce) {
-        // console.log(responce)
         bookingData = await responce.json();
+
         console.log(bookingData);
     });
 
     data = {
         token: token,
-        bookings: bookingData
+        bookings: bookingData.filter(function (booking) {
+            return booking.status == 1;
+        })
     }
     return data;
 }

@@ -7,3 +7,8 @@ td {
     padding: 0.2rem;
     text-align: center;
 }
+
+tr:hover {
+    background-color: $maneDarkAcent;
+    cursor: pointer;
+}
