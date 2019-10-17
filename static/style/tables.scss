@@ -12,3 +12,28 @@ tr:hover:not(:first-child) {
     background-color: $maneDarkAcent;
     cursor: pointer;
 }
+
+
+.tableContainer {
+    background-color: $maneColor;
+    grid-column: 2 / 15;
+    grid-row-start: 2;
+    grid-row-end: auto;
+    table,
+    thead,
+    tbody,
+    th,
+    td {
+        margin: 1rem auto;
+        border: 1px solid $maneDarkAcent;
+        border-collapse: collapse;
+        padding: 0.2rem;
+        text-align: center;
+
+    }
+
+    tr:hover:not(:first-child) {
+        background-color: $maneLightAcent;
+        cursor: pointer;
+    }
+}

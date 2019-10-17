@@ -3,6 +3,7 @@ import fetch from 'isomorphic-unfetch';
 
 import AdminMainLayout from '../../../components/MainAdminLayout';
 import { auth } from '../../../utils/auth';
+import { bookingStatusToString } from '../../../utils/utils';
 import config from '../../../config/config.json';
 
 
@@ -11,17 +12,27 @@ const booking = props => (
         <AdminMainLayout>
             <div className='bookingInfo'>
                 <h1>Booking: {props.booking.id}</h1>
-                <h2>Booker: {props.booking.user_id}</h2>
-                <h2>Equipment: {props.booking.equipment_name}</h2>
-                <h2>Borrow Time: {props.booking.borrow_time} days</h2>
-                <h2>Booking Time: {props.booking.booking_time}</h2>
-                <button onClick={function () {
-                    handleSubmit('approve', props.booking.id, props.token);
-                }}>Approve</button>
+                <h3>Booker: {props.booking.user_id}</h3>
+                <h3>Equipment: {props.booking.equipment_name}</h3>
+                <h3>Status: {bookingStatusToString(props.booking.status)}</h3>
+                <h3>Borrow Time: {props.booking.borrow_time} days</h3>
+                <h3>Booking Time: {props.booking.booking_time}</h3>
+                {props.booking.status == 1 ?
+                <div>
+                    <button onClick={function () {
+                        handleSubmit('approve', props.booking.id, props.token);
+                    }}>Approve</button>
 
-                <button onClick={function () {
-                    handleSubmit('deny', props.booking.id, props.token);
-                }}>Deny</button>
+                    <button onClick={function () {
+                        handleSubmit('deny', props.booking.id, props.token);
+                    }}>Deny</button>
+                </div>
+                :
+                <div>
+                    <h3>Checkout Time: {props.booking.checkout_time}</h3>
+                    <h3>Return Time: {props.booking.return_time}</h3>
+                </div>
+                }
             </div>
         </AdminMainLayout>
 )

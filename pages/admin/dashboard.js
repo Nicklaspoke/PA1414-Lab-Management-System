@@ -13,27 +13,52 @@ import Link from 'next/link';
 
 const Dashboard = props => (
     <AdminMainLayout>
-        {console.log(props)}
         <div className='DashboardLeftUp'>
             <h2>Bookings To Approve</h2>
-            <table>
-                <tr>
-                    <th>User Id</th>
-                    <th>Eqipment Name</th>
-                    <th>Booking Time</th>
-                </tr>
-                {props.bookings.map(booking => (
-                    <Link href='booking/[id]' as={`booking/${booking.id}`}>
-                            <tr>
-                                <td>{booking.user_id}</td>
-                                <td>{booking.equipment_name}</td>
-                                <td>{booking.booking_time}</td>
-                            </tr>
-                    </Link>
-                ))}
+            <table className='tableContainer'>
+                <thead>
+                    <tr>
+                        <th>User Id</th>
+                        <th>Eqipment Name</th>
+                        <th>Borrow Time</th>
+                        <th>Booking Time</th>
+                    </tr>
+                </thead>
+
+                    {props.bookings.map(booking => (
+                        <Link href='booking/[id]' as={`booking/${booking.id}`}>
+                                <tr>
+                                    <td>{booking.user_id}</td>
+                                    <td>{booking.equipment_name}</td>
+                                    <td>{booking.borrow_time}</td>
+                                    <td>{booking.booking_time}</td>
+                                </tr>
+                        </Link>
+                    ))}
+
             </table>
         </div>
-        <div className='DashboardRightUp'></div>
+        <div className='DashboardRightUp'>
+            <h2>Student Accounts To Approve</h2>
+            <table className='tableContainer'>
+                <thead>
+                        <tr>
+                            <th>User Id</th>
+                            <th>Email</th>
+                        </tr>
+                </thead>
+
+                    {props.accounts.map(account => (
+                        <Link href='users/[id]' as={`users/${account.user_id}`}>
+                            <tr>
+                            <td>{account.user_id}</td>
+                            <td>{account.email}</td>
+                            </tr>
+                        </Link>
+                    ))}
+
+            </table>
+        </div>
         {/* <div className='DashboardleftDown'></div> */}
         {/* <div className='DashboardRightDown'></div> */}
     </AdminMainLayout>
@@ -46,7 +71,7 @@ Dashboard.getInitialProps = async ctx => {
 
     let bookingData;
     //Get the booking data
-    const res = await fetch(`${config.apiAddr}/booking/all`, {
+    let res = await fetch(`${config.apiAddr}/booking/all`, {
         headers: {
             'content-type': 'application/json',
             'x-access-token': token
@@ -54,14 +79,27 @@ Dashboard.getInitialProps = async ctx => {
         method: 'GET'
     }).then(async function (responce) {
         bookingData = await responce.json();
+    });
 
-        console.log(bookingData);
+    let accountData;
+    //Get the accounts to approve
+    res = await fetch(`${config.apiAddr}/register/user`, {
+        headers: {
+            'content-type': 'application/json',
+            'x-access-token': token
+        },
+        method: 'GET'
+    }).then(async function (responce) {
+        accountData = await responce.json();
     });
 
     data = {
         token: token,
         bookings: bookingData.filter(function (booking) {
             return booking.status == 1;
+        }),
+        accounts: accountData.data.filter(function (account) {
+            return account.role == 4;
         })
     }
     return data;
