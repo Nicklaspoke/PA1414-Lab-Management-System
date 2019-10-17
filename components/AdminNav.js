@@ -37,9 +37,11 @@ const AdminNav = () => (
             </li>
 
             <li>
-                <a onClick={function (e) {
-                    logout();
-                }}>Logout</a>
+                <Link href="/login">
+                    <a onClick={function (e) {
+                        logout();
+                    }}>Logout</a>
+                </Link>
             </li>
         </ul>
     </div>

@@ -23,7 +23,7 @@ const Dashboard = props => (
                     <th>Booking Time</th>
                 </tr>
                 {props.bookings.map(booking => (
-                    <Link href={`booking?id=${booking.id}`} as={`booking/${booking.id}`}>
+                    <Link href='booking/[id]' as={`booking/${booking.id}`}>
                             <tr>
                                 <td>{booking.user_id}</td>
                                 <td>{booking.equipment_name}</td>
