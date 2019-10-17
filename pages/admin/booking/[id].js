@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 import fetch from 'isomorphic-unfetch';
 
 import AdminMainLayout from '../../../components/MainAdminLayout';
@@ -15,7 +15,13 @@ const booking = props => (
                 <h2>Equipment: {props.booking.equipment_name}</h2>
                 <h2>Borrow Time: {props.booking.borrow_time} days</h2>
                 <h2>Booking Time: {props.booking.booking_time}</h2>
-                <h2></h2>
+                <button onClick={function () {
+                    handleSubmit('approve', props.booking.id, props.token);
+                }}>Approve</button>
+
+                <button onClick={function () {
+                    handleSubmit('deny', props.booking.id, props.token);
+                }}>Deny</button>
             </div>
         </AdminMainLayout>
 )
@@ -44,8 +50,30 @@ booking.getInitialProps = async ctx => {
             return booking.id == id;
         })[0]
     }
-    console.log(data.booking.id);
+
     return data;
+}
+
+/**
+ *
+ * @param {string} action either approve or deny a booking
+ * @param {int} id the id of the booking
+ * @param {string} token the admins JWT token
+ */
+async function handleSubmit(action, id, token) {
+    const data = {
+        bookingId: id,
+    };
+    console.log(action)
+    const res = await fetch(`${config.apiAddr}/booking/${action}`, {
+        body: JSON.stringify(data),
+        headers: {
+            'content-type': 'application/json',
+            'x-access-token': token
+        },
+        method: 'PUT'
+    });
+    Router.push('/admin/dashboard');
 }
 
 export default booking;

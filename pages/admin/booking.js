@@ -12,7 +12,9 @@ const booking = props => (
             <div className='bookingInfo'>
                 <h1>Booking: {props.booking.id}</h1>
                 <h2>Booker: {props.booking.user_id}</h2>
-
+                <h2>Equipment: {props.booking.equipment_name}</h2>
+                <h2>Borrow Time: {props.booking.borrow_time} days</h2>
+                <h2>Booking Time: {props.booking.booking_time}</h2>
                 <h2></h2>
             </div>
         </AdminMainLayout>
