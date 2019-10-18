@@ -1,9 +1,9 @@
 import Router from 'next/router';
 import fetch from 'isomorphic-unfetch';
 
-import AdminMainLayout from '../../../components/MainAdminLayout';
-import { auth } from '../../../utils/auth';
-import config from '../../../config/config.json';
+import AdminMainLayout from '../../../../components/MainAdminLayout';
+import { auth } from '../../../../utils/auth';
+import config from '../../../../config/config.json';
 
 
 
@@ -13,13 +13,17 @@ const account = props => (
                 <h1>Account: {props.account.user_id}</h1>
                 <h2>User Id: {props.account.user_id}</h2>
                 <h2>Email: {props.account.email}</h2>
-                <button onClick={function () {
-                    handleSubmit('approve', props.account.user_id, props.token);
-                }}>Approve</button>
+                {props.account.role == 4 ?
+                    <div>
+                    <button onClick={function () {
+                        handleSubmit('approve', props.account.user_id, props.token);
+                    }}>Approve</button>
 
-                <button onClick={function () {
-                    handleSubmit('deny', props.account.user_id, props.token);
-                }}>Deny</button>
+                    <button onClick={function () {
+                        handleSubmit('deny', props.account.user_id, props.token);
+                    }}>Deny</button>
+                    </div>
+                : null}
             </div>
         </AdminMainLayout>
 )
@@ -59,19 +63,17 @@ account.getInitialProps = async ctx => {
  * @param {string} token the admins JWT token
  */
 async function handleSubmit(action, id, token) {
-    const method = action == 'approve' ? 'PUT' : 'DELETE'
-    console.log(method);
-    console.log(action);
     const data = {
         userId: id,
     };
+    console.log(action)
     const res = await fetch(`${config.apiAddr}/register/${action}`, {
         body: JSON.stringify(data),
         headers: {
             'content-type': 'application/json',
             'x-access-token': token
         },
-        method: method
+        method: 'PUT'
     });
     Router.push('/admin/dashboard');
 }

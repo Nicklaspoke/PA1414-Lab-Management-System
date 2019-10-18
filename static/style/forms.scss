@@ -5,6 +5,26 @@
 
 
     label {
+        display: block;
+        text-align: left;
         margin-top: 5rem;
+    }
+}
+
+.registrationForm {
+    grid-column: 2 / 7;
+    grid-row: 2 / auto;
+    margin-left: 1rem;
+
+    label
+    {
+        display: block;
+        text-align: left;
+        margin-top: 2rem;
+    }
+
+    select {
+        display: block;
+        transition-duration: 1;
     }
 }

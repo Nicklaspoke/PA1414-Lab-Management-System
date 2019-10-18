@@ -39,20 +39,20 @@ const login = () => (
     <div className="loginForm">
         <form onSubmit={function (e) {handleSubmit(e)}}>
             <h2>Sign In To Your Account</h2>
-            <label for='userId'>User Id:</label>
-            <br />
+            <label htmlFor='userId'>User Id:</label>
+
             <input type='text' id='userId' name='userId' maxLength='6' onChange={function (e) {
                 formData.userId = e.target.value;
                 console.log(formData.userId);
             }} required></input>
-            <br />
-            <label for='password'>Password</label>
-            <br />
+
+            <label htmlFor='password'>Password</label>
+
             <input type='password' id='password' name='password' onChange={function (e) {
                 formData.password = e.target.value;
                 console.log(formData.password);
             }} required></input>
-            <br />
+
             <input type="submit" value='Login'></input>
         </form>
     </div>

@@ -37,3 +37,31 @@ tr:hover:not(:first-child) {
         cursor: pointer;
     }
 }
+
+.accountTableContainer {
+    background-color: $maneColor;
+    grid-column: 2 / 8;
+    grid-row-start: 2;
+    grid-row-end: auto;
+
+    table,
+    thead,
+    tbody,
+    th,
+    td {
+        margin: 1rem auto;
+        border-top: 3px solid $maneDarkAcent;
+        border-bottom: 3px solid $maneDarkAcent;
+        border-left: 0px solid $maneDarkAcent;
+        border-right: 0px solid $maneDarkAcent;
+        border-collapse: collapse;
+        padding: 0.4rem;
+        text-align: center;
+
+    }
+
+    tr:hover:not(:first-child) {
+        background-color: $maneLightAcent;
+        cursor: pointer;
+    }
+}

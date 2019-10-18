@@ -3,31 +3,42 @@
  */
 import AdminMainLayout from '../../components/MainAdminLayout';
 import { auth } from '../../utils/auth';
-import { bookingStatusToString } from '../../utils/utils';
+import { accountRoleToString } from '../../utils/utils';
 import config from '../../config/config.json';
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
+import { Router } from 'next/Router';
 
 const Users = props => (
     <AdminMainLayout>
-            <table className='tableContainer'>
+            <table className='accountTableContainer'>
                 <thead>
                 <tr>
                     <th>User Id</th>
                     <th>Email</th>
                     <th>Role</th>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 {props.accounts.map(account => (
-                    <Link href='users/[id]' as={`users/${account.user_id}`}>
+                    <Link href='users/info/[id]' as={`users/info/${account.user_id}`}>
                             <tr>
                                 <td>{account.user_id}</td>
                                 <td>{account.email}</td>
-                                <td>{account.role}</td>
+                                <td>{accountRoleToString(account.role)}</td>
+                                <td>
+                                    <Link href='users/deactivate/[id]' as={`users/deactivate/${account.user_id}`}>
+                                        <a>Deactivate Account</a>
+                                    </Link>
+                                </td>
                             </tr>
                     </Link>
                 ))}
             </table>
+
+            <Link href='newUser'>
+                <button className='leftButton'>Add New Account</button>
+            </Link>
 
     </AdminMainLayout>
 );
@@ -46,8 +57,6 @@ Users.getInitialProps = async ctx => {
         method: 'GET'
     }).then(async function (responce) {
         accountData = await responce.json();
-
-        console.log(accountData);
     });
 
     data = {

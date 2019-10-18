@@ -21,3 +21,18 @@ export const bookingStatusToString = (bookingStaus) => {
             return 'Denied';
     }
 };
+
+export const accountRoleToString = (accountRole) => {
+    switch (accountRole) {
+        case 1:
+            return 'Admin';
+        case 2:
+            return 'Teacher';
+        case 3:
+            return 'Student';
+        case 4:
+            return 'Avaiting Approval';
+        case 5:
+            return 'Deactivated';
+    }
+}

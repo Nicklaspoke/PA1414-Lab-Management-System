@@ -1,25 +1,26 @@
 import Router from 'next/router';
 import fetch from 'isomorphic-unfetch';
 
-import AdminMainLayout from '../../../components/MainAdminLayout';
-import { auth } from '../../../utils/auth';
-import config from '../../../config/config.json';
+import AdminMainLayout from '../../../../components/MainAdminLayout';
+import { auth } from '../../../../utils/auth';
+import config from '../../../../config/config.json';
 
 
 
 const account = props => (
         <AdminMainLayout>
             <div className='accountInfo'>
-                <h1>Account: {props.account.user_id}</h1>
-                <h2>User Id: {props.account.user_id}</h2>
-                <h2>Email: {props.account.email}</h2>
+                <h1>Are you sure you want to deactivate this account</h1>
+                <h2>Account: {props.account.user_id}</h2>
+                <h3>User Id: {props.account.user_id}</h3>
+                <h3>Email: {props.account.email}</h3>
                 <button onClick={function () {
-                    handleSubmit('approve', props.account.user_id, props.token);
-                }}>Approve</button>
+                    handleSubmit('ok', props.account.user_id, props.token);
+                }}>Yes, Deactivate</button>
 
                 <button onClick={function () {
-                    handleSubmit('deny', props.account.user_id, props.token);
-                }}>Deny</button>
+                    Router.push('/admin/users');
+                }}>No, Take Me Back</button>
             </div>
         </AdminMainLayout>
 )
@@ -59,21 +60,19 @@ account.getInitialProps = async ctx => {
  * @param {string} token the admins JWT token
  */
 async function handleSubmit(action, id, token) {
-    const method = action == 'approve' ? 'PUT' : 'DELETE'
-    console.log(method);
-    console.log(action);
     const data = {
         userId: id,
     };
-    const res = await fetch(`${config.apiAddr}/register/${action}`, {
+    console.log(id)
+    const res = await fetch(`${config.apiAddr}/register`, {
         body: JSON.stringify(data),
         headers: {
             'content-type': 'application/json',
             'x-access-token': token
         },
-        method: method
+        method: 'DELETE'
     });
-    Router.push('/admin/dashboard');
+    Router.push('/admin/users');
 }
 
 export default account;
