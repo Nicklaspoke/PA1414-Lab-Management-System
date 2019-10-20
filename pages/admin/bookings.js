@@ -10,6 +10,7 @@ import Link from 'next/link';
 
 const Bookings = props => (
     <AdminMainLayout>
+
             <table className='tableContainer'>
                 <thead>
                 <tr>

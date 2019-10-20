@@ -36,3 +36,14 @@ export const accountRoleToString = (accountRole) => {
             return 'Deactivated';
     }
 }
+
+export const equipmentStatusToString = (equipmentStatus) => {
+    switch (equipmentStatus) {
+        case 1:
+            return 'Free';
+        case 2:
+            return 'Booked';
+        case 3:
+            return 'Not Available';
+    }
+}

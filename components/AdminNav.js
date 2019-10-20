@@ -19,7 +19,7 @@ const AdminNav = () => (
             </li>
 
             <li>
-                <Link href="/admin/equipment">
+                <Link href="/admin/equipments">
                     <a>Equipment</a>
                 </Link>
             </li>
