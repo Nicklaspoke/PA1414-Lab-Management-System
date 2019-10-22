@@ -1,5 +1,5 @@
 /**
- * User landing page/dashboard
+ * User page to see all their bookings
  *
  * @author Nicklas König (niko14)
  */
@@ -12,17 +12,20 @@ import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 import { bookingStatusToString } from '../../utils/utils';
 
-const Dashboard = props => (
+const allBookings = props => (
     <MainUserLayout>
         <div className='CurrentBookingsContainer'>
-            <h2>Current Bookings</h2>
+            <h2>All Bookings</h2>
             <table className='tableContainer'>
                 <thead>
                     <tr>
                         <th>Equipment Name</th>
                         <th>Borrow Time (days)</th>
                         <th>Status</th>
+                        <th>Booking Time</th>
                         <th>Checkout Time</th>
+                        <th>Return Time</th>
+
                     </tr>
                 </thead>
 
@@ -32,7 +35,9 @@ const Dashboard = props => (
                                 <td>{booking.equipment_name}</td>
                                 <td>{booking.borrow_time}</td>
                                 <td>{bookingStatusToString(booking.status)}</td>
+                                <td>{booking.booking_time}</td>
                                 <td>{booking.checkout_time}</td>
+                                <td>{booking.return_time}</td>
                             </tr>
                         </Link>
                     ))}
@@ -42,7 +47,7 @@ const Dashboard = props => (
     </MainUserLayout>
 );
 
-Dashboard.getInitialProps = async ctx => {
+allBookings.getInitialProps = async ctx => {
     const token = await auth(ctx);
 
     let bookings;
@@ -59,11 +64,9 @@ Dashboard.getInitialProps = async ctx => {
 
     let data = {
         token: token,
-        bookings: bookings.filter(function (booking) {
-            return booking.status < 4;
-        })
+        bookings: bookings,
     }
 
     return data;
 }
-export default Dashboard;
+export default allBookings;

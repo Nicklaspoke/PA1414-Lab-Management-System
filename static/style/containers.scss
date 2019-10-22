@@ -80,6 +80,15 @@
 
 }
 
+.CurrentBookingsContainer {
+    grid-column: 5 / 15;
+    grid-row: 2 / 6;
+    background-color: $maneColor;
+
+    h2 {
+        text-align: center;
+    }
+}
 .bookingInfo {
     grid-column: 2 / 10;
     grid-row: 2 / 10;

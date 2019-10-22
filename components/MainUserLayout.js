@@ -11,7 +11,7 @@ import '../static/style.min.css';
 const MainAdminLayout = props => (
     <div className="site-wrapper">
         <HeaderBanner />
-        <AdminNav />
+        <Usernav />
         <div className="mainContainer">
             {props.children}
         </div>

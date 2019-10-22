@@ -8,11 +8,29 @@
     grid-row-start: auto;
     grid-row-end: auto;
     min-height: 50vh;
-    border-right: solid $maneLightAcent 1px;
+    border-right: solid $maneColor 1px;
 
-    a {
-        text-decoration: underline;
+    button {
+        text-decoration: none;
+        margin: 0;
+        color: $fontColor;
+        padding: 0.8rem;
+        font-family: $fontBody;
+
+        background-color: $maneColor;
+        border: 1px solid $maneLightAcent;
+        text-align: center;
+        border-radius: 0.2rem;
+        text-decoration: none;
     }
+
+    button:hover {
+        text-decoration: underline;
+        background-color: $maneLightAcent;
+        cursor: pointer;
+    }
+
+
 
     ul {
         list-style: none;
@@ -20,7 +38,7 @@
 
     ul,
     li {
-        margin-top: 0.5rem;
+        margin-top: 2rem;
         text-align: left;
     }
 }

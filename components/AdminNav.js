@@ -6,7 +6,6 @@
 'use strict';
 
 import Link from 'next/link';
-import Router from 'next/Router';
 import { logout } from '../utils/auth';
 
 const AdminNav = () => (
@@ -14,33 +13,33 @@ const AdminNav = () => (
         <ul>
             <li>
                 <Link href="/admin/dashboard">
-                    <a>Home</a>
+                    <button>Home</button>
                 </Link>
             </li>
 
             <li>
                 <Link href="/admin/equipments">
-                    <a>Equipment</a>
+                    <button>Equipment</button>
                 </Link>
             </li>
 
             <li>
                 <Link href="/admin/bookings">
-                    <a>Bookings</a>
+                    <button>Bookings</button>
                 </Link>
             </li>
 
             <li>
                 <Link href="/admin/users">
-                    <a>Users</a>
+                    <button>Users</button>
                 </Link>
             </li>
 
             <li>
                 <Link href="/login">
-                    <a onClick={function (e) {
+                    <button onClick={function (e) {
                         logout();
-                    }}>Logout</a>
+                    }}>Logout</button>
                 </Link>
             </li>
         </ul>

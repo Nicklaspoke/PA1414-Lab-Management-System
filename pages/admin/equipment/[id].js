@@ -31,7 +31,7 @@ const equipment = props => (
 
 equipment.getInitialProps = async ctx => {
     let data;
-    console.log(ctx.query.id)
+
     const barcode = ctx.query.id;
     const token = await auth(ctx);
 
@@ -45,7 +45,6 @@ equipment.getInitialProps = async ctx => {
         method: 'GET'
     }).then(async function (responce) {
         equipmentData = await responce.json();
-        console.log(equipmentData.data)
     });
 
     data = {
@@ -54,7 +53,7 @@ equipment.getInitialProps = async ctx => {
             return equipment.barcode == barcode;
         })[0]
     }
-    console.log(data)
+
     return data;
 }
 

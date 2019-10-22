@@ -6,31 +6,35 @@
 'use strict';
 
 import Link from 'next/link';
+import { logout } from '../utils/auth';
+
 
 const UserNav = () => (
     <div className="navbar">
         <ul>
             <li>
                 <Link href="/user/dashboard">
-                    <a>Home</a>
+                    <button>Home</button>
                 </Link>
             </li>
 
             <li>
                 <Link href="/user/book">
-                    <a>Book Equipment</a>
+                    <button >Book Equipment</button>
                 </Link>
             </li>
 
             <li>
-                <Link href="/user/bookings">
-                    <a>Current Bookings</a>
+                <Link href="/user/allBookings" as={'/user/bookings'}>
+                    <button >All bookings</button>
                 </Link>
             </li>
 
             <li>
-                <Link href="/logout">
-                    <a>Logout</a>
+                <Link href="/login">
+                    <button onClick={function (e) {
+                        logout();
+                    }}>Logout</button>
                 </Link>
             </li>
         </ul>
