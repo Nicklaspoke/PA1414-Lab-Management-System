@@ -3,11 +3,18 @@
     grid-row: auto;
     margin-left: 1rem;
 
-
-    label {
+    label
+    {
         display: block;
         text-align: left;
-        margin-top: 5rem;
+        margin-top: 2rem;
+        font-size: 150%;
+    }
+
+    input
+    {
+        padding: 0.4rem;
+        background-color: $maneLightAcent;
     }
 }
 
@@ -51,10 +58,6 @@
     {
         padding: 0.4rem;
         background-color: $maneLightAcent;
-    }
-
-    input[type=submit] {
-
     }
 
     select {

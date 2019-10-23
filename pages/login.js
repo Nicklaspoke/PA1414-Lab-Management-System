@@ -52,8 +52,8 @@ const login = () => (
                 formData.password = e.target.value;
                 console.log(formData.password);
             }} required></input>
-
-            <input type="submit" value='Login'></input>
+            <br />
+            <input className='submitButton' type="submit" value='Login'></input>
         </form>
     </div>
 

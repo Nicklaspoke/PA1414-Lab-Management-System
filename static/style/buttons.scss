@@ -38,12 +38,13 @@
 }
 
 .submitButton {
-    margin: 1rem 0 1rem 0;
+    margin: 1rem 0.5rem;
     grid-column: 4 / 6;
     grid-row: 6 / 6;
     color: $fontColor;
     padding: 0.8rem;
     font-family: $fontBody;
+    cursor: pointer;
 
     background-color: $maneColor;
     border: 1px solid $maneLightAcent;

@@ -52,8 +52,6 @@ Equipments.getInitialProps = async ctx => {
         method: 'GET'
     }).then(async function (responce) {
         equipmentData = await responce.json();
-
-        console.log(equipmentData);
     });
 
     data = {
