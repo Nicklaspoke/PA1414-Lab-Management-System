@@ -7,7 +7,7 @@ import config from '../../../../config/config.json';
 
 const equipment = props => (
     <AdminMainLayout>
-        <div className='accountInfo'>
+        <div className='accountInfo slide-in-right'>
             <h1>Are you sure you want to remove this equipment</h1>
             <h2>Barcode: {props.equipment.barcode}</h2>
             <h3>Name: {props.equipment.name}</h3>

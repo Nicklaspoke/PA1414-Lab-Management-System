@@ -11,7 +11,7 @@ import { Router } from 'next/Router';
 
 const Users = props => (
     <AdminMainLayout>
-            <table className='accountTableContainer'>
+            <table className='accountTableContainer slide-in-bottom'>
                 <thead>
                 <tr>
                     <th>User Id</th>
@@ -37,7 +37,7 @@ const Users = props => (
             </table>
 
             <Link href='newUser'>
-                <button className='leftButton'>Add New Account</button>
+                <button className='leftButton submitStyle slide-in-left'>Add New Account</button>
             </Link>
 
     </AdminMainLayout>

@@ -27,7 +27,7 @@ const equipment = props => (
             <p>{errorDisplay.message}</p>
         </div>
         : null}
-        <div className='equipmentForm'>
+        <div className='equipmentForm slide-in-right'>
             <h1>Edit: {props.equipment.name}</h1>
 
             <form onSubmit={function (e) {handleSubmit(e, props.token)}}>

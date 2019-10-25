@@ -21,8 +21,8 @@
 }
 
 .RightButton {
-    margin: 1rem 0 1rem 0;
-    grid-column: 4 / 6;
+    margin: 1rem 1rem 0 1rem;
+    grid-column: 5 / 7;
     grid-row: 6 / 6;
     color: $fontColor;
     padding: 0.8rem;
@@ -46,6 +46,19 @@
     font-family: $fontBody;
     cursor: pointer;
 
+    background-color: $maneColor;
+    border: 1px solid $maneLightAcent;
+    text-align: center;
+    border-radius: 0.2rem;
+    text-decoration: none;
+}
+
+.submitStyle {
+    margin: 1rem 0.5rem;
+    color: $fontColor;
+    padding: 0.8rem;
+    font-family: $fontBody;
+    cursor: pointer;
     background-color: $maneColor;
     border: 1px solid $maneLightAcent;
     text-align: center;

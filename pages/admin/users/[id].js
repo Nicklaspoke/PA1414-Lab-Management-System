@@ -9,15 +9,15 @@ import config from '../../../config/config.json';
 
 const account = props => (
         <AdminMainLayout>
-            <div className='accountInfo'>
+            <div className='accountInfo slide-in-right'>
                 <h1>Account: {props.account.user_id}</h1>
                 <h2>User Id: {props.account.user_id}</h2>
                 <h2>Email: {props.account.email}</h2>
-                <button onClick={function () {
+                <button className='LeftButton' onClick={function () {
                     handleSubmit('approve', props.account.user_id, props.token);
                 }}>Approve</button>
 
-                <button onClick={function () {
+                <button className='RightButton' onClick={function () {
                     handleSubmit('deny', props.account.user_id, props.token);
                 }}>Deny</button>
             </div>

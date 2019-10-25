@@ -13,7 +13,7 @@ import Link from 'next/link';
 
 const Dashboard = props => (
     <AdminMainLayout>
-        <div className='DashboardLeftUp'>
+        <div className='DashboardLeftUp slide-in-bottom'>
             <h2>Bookings To Approve</h2>
             <table className='tableContainer'>
                 <thead>
@@ -38,7 +38,7 @@ const Dashboard = props => (
 
             </table>
         </div>
-        <div className='DashboardRightUp'>
+        <div className='DashboardRightUp slide-in-bottom'>
             <h2>Student Accounts To Approve</h2>
             <table className='tableContainer'>
                 <thead>

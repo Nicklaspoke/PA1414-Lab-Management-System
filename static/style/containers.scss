@@ -9,6 +9,7 @@
     grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
     // width: 100vw;
     height: 100vh;
+    overflow-y: scroll
 }
 
 .mainContainer {
@@ -48,7 +49,7 @@
 }
 
 .infoLoginBox {
-    grid-column: 9 / 13;
+    grid-column: 7 / 13;
     grid-row: auto;
 }
 

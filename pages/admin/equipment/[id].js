@@ -12,7 +12,7 @@ import { equipmentStatusToString } from '../../../utils/utils';
 
 const equipment = props => (
         <AdminMainLayout>
-            <div className='accountInfo'>
+            <div className='accountInfo slide-in-right'>
                 <h1>Barcode: {props.equipment.barcode}</h1>
                 <h2>Name: {props.equipment.name}</h2>
                 <h2>Status: {equipmentStatusToString(props.equipment.status)}</h2>

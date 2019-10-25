@@ -11,7 +11,7 @@ import Link from 'next/link';
 const Bookings = props => (
     <AdminMainLayout>
 
-            <table className='tableContainer'>
+            <table className='tableContainer slide-in-bottom'>
                 <thead>
                 <tr>
                     <th>User Id</th>

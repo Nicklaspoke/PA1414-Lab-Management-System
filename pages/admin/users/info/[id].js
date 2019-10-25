@@ -9,7 +9,7 @@ import config from '../../../../config/config.json';
 
 const account = props => (
         <AdminMainLayout>
-            <div className='accountInfo'>
+            <div className='accountInfo slide-in-right'>
                 <h1>Account: {props.account.user_id}</h1>
                 <h2>User Id: {props.account.user_id}</h2>
                 <h2>Email: {props.account.email}</h2>

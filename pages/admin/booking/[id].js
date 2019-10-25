@@ -10,7 +10,7 @@ import config from '../../../config/config.json';
 
 const booking = props => (
         <AdminMainLayout>
-            <div className='bookingInfo'>
+            <div className='bookingInfo slide-in-right'>
                 <h1>Booking: {props.booking.id}</h1>
                 <h3>Booker: {props.booking.user_id}</h3>
                 <h3>Equipment: {props.booking.equipment_name}</h3>
@@ -19,11 +19,11 @@ const booking = props => (
                 <h3>Booking Time: {props.booking.booking_time}</h3>
                 {props.booking.status == 1 ?
                 <div>
-                    <button onClick={function () {
+                    <button className='LeftButton' onClick={function () {
                         handleSubmit('approve', props.booking.id, props.token);
                     }}>Approve</button>
 
-                    <button onClick={function () {
+                    <button className='RightButton' onClick={function () {
                         handleSubmit('deny', props.booking.id, props.token);
                     }}>Deny</button>
                 </div>

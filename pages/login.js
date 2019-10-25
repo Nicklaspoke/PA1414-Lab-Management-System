@@ -9,7 +9,6 @@ const jwt = require('jsonwebtoken');
 import fetch from 'isomorphic-unfetch';
 import Router from 'next/router';
 import Link from 'next/link';
-
 import MainLayout from '../components/MainLayout';
 
 import config from '../config/config.json';
@@ -36,7 +35,7 @@ const login = () => (
     </div>
     : null}
 
-    <div className="loginForm">
+    <div className="loginForm slide-in-bottom">
         <form onSubmit={function (e) {handleSubmit(e)}}>
             <h2>Sign In To Your Account</h2>
             <label htmlFor='userId'>User Id:</label>
@@ -57,9 +56,9 @@ const login = () => (
         </form>
     </div>
 
-    <div className="infoLoginBox">
+    <div className="infoLoginBox slide-in-right">
         <h2>Welcome to the Login page for SERL-BTH Booking system</h2>
-        <h3>Please login with your BTH user Id</h3>
+        <h3>Please login with the id you signed up for for the account</h3>
         <p>If you don't have an account you can register and apply for one <Link href="/register"><a>here</a></Link></p>
     </div>
     </MainLayout>

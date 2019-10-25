@@ -76,7 +76,7 @@ const RegisterNewAccount = props => (
                     <option value='1'>Admin</option>
                 </select>
 
-                <input type="submit" value='Create Account'></input>
+                <input className='submitButton' type="submit" value='Create Account'></input>
 
             </form>
         </div>

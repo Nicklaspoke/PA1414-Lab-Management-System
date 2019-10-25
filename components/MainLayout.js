@@ -7,6 +7,7 @@
 import HeaderBanner from './HeaderBanner';
 import NavBar from './Navbar';
 
+
 import '../static/style.min.css';
 
 const MainLayout = props => (

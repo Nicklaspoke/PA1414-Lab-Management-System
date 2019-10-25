@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 const Equipments = props => (
     <AdminMainLayout>
-            <table className='equipmentTableContainer'>
+            <table className='equipmentTableContainer slide-in-bottom'>
                 <thead>
                 <tr>
                     <th>Barcode</th>
@@ -33,7 +33,7 @@ const Equipments = props => (
             </table>
 
             <Link href='equipment/addEquipment' as={'/equipment/addEquipment'}>
-                <button className='leftButton'>Add New Equipment</button>
+                <button className='leftButton submitStyle slide-in-left'>Add New Equipment</button>
             </Link>
 
     </AdminMainLayout>

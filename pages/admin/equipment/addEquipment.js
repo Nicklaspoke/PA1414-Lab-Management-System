@@ -22,12 +22,12 @@ let formData = {
 const addEquipment = props => (
     <AdminMainLayout>
         {errorDisplay.display ?
-        <div className="errorCreationBox">
+        <div className="errorCreationBox slide-in-top">
             <h3>{errorDisplay.titel}</h3>
             <p>{errorDisplay.message}</p>
         </div>
         : null}
-        <div className='equipmentForm'>
+        <div className='equipmentForm slide-in-right'>
             <h1>Add new equipment</h1>
 
             <form onSubmit={function (e) {handleSubmit(e, props.token)}}>
