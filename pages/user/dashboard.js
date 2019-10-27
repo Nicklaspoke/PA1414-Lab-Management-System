@@ -14,7 +14,7 @@ import { bookingStatusToString } from '../../utils/utils';
 
 const Dashboard = props => (
     <MainUserLayout>
-        <div className='CurrentBookingsContainer'>
+        <div className='CurrentBookingsContainer slide-in-bottom'>
             <h2>Current Bookings</h2>
             <table className='tableContainer'>
                 <thead>

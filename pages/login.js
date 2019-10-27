@@ -32,6 +32,7 @@ const login = () => (
     <div className="errorLoginBox">
         <h3>{errorDisplay.titel}</h3>
         <p>{errorDisplay.message}</p>
+        {errorDisplay.display=false}
     </div>
     : null}
 

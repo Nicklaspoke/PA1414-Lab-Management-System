@@ -12,6 +12,11 @@
     overflow-y: scroll
 }
 
+.index-container {
+    grid-column: 2 / 18;
+    grid-row: 2 / auto;
+    text-align: center;
+}
 .mainContainer {
     grid-column-start: 2;
     grid-column-end: 11;
@@ -23,6 +28,19 @@
     display: grid;
     grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
     grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+}
+
+.modal {
+    background-color: $maneColor;
+    grid-column: 7 / 13;
+    grid-row: 5 / 9;
+    text-align: center;
+    z-index: 5;
+
+    a {
+        text-decoration: underline;
+        cursor: pointer;
+    }
 }
 
 .headerBanner {
@@ -71,14 +89,6 @@
     h2 {
         text-align: center;
     }
-}
-
-.DashboardleftDown {
-
-}
-
-.DashboardRightDown {
-
 }
 
 .CurrentBookingsContainer {

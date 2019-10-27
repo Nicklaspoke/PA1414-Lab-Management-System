@@ -7,7 +7,7 @@ import { bookingStatusToString } from '../../../utils/utils';
 
 const booking = props => (
     <MainUserLayout>
-        <div className='bookingInfo'>
+        <div className='bookingInfo slide-in-right'>
             <h2>Equipment Name: {props.booking.equipment_name}</h2>
             <h2>Borrow Time (days): {props.booking.borrow_time}</h2>
             <h2>Status: {bookingStatusToString(props.booking.status)}</h2>

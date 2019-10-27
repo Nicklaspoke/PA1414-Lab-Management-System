@@ -12,10 +12,9 @@ let formData = {
 
 const book = props => (
     <MainUserLayout>
-        <div className='equipmentForm'>
+        <div className='equipmentForm slide-in-right'>
             <h1>Book: {props.equipment.name}</h1>
-            {formData.barcode = props.equipment.barcode}
-            <form onSubmit={function (e) {handleSubmit(e, props.token)}}>
+            <form onSubmit={function (e) {handleSubmit(e, props.token, props-equipment.barcode)}}>
                 <label htmlFor='barcode'>Barcode:</label>
                 <input type='text' id='barcode' name='barcode' value={props.equipment.barcode} readOnly></input>
 
@@ -62,11 +61,11 @@ book.getInitialProps = async ctx => {
     return data;
 }
 
-async function handleSubmit(e, token) {
+async function handleSubmit(e, token, barcode) {
     e.preventDefault();
     console.log(formData);
     const data = {
-        barcode: formData.barcode,
+        barcode: barcode,
         borrowTime: formData.borrowTime
     };
 

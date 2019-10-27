@@ -14,7 +14,7 @@ import { bookingStatusToString } from '../../utils/utils';
 
 const allBookings = props => (
     <MainUserLayout>
-        <div className='CurrentBookingsContainer'>
+        <div className='CurrentBookingsContainer slide-in-bottom'>
             <h2>All Bookings</h2>
             <table className='tableContainer'>
                 <thead>
