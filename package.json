@@ -7,10 +7,9 @@
         "dev": "next",
         "build": "next build",
         "start": "next start",
+        "start-port": "next start -p $PORT",
         "style": "sass static/style/base.scss static/style.min.css --style compressed",
-        "style-watch": "sass --watch static/style/base.scss static/style.min.css --style compressed",
-        "lint": "eslint . --ext .js",
-        "lint-fix": "eslint --fix --ext .js"
+        "style-watch": "sass --watch static/style/base.scss static/style.min.css --style compressed"
     },
     "repository": {
         "type": "git",
