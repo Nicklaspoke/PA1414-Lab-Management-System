@@ -55,7 +55,7 @@ const register = props => (
         : null}
         <div className='registrationForm slide-in-bottom'>
         <h1>Create a new account</h1>
-            <form onSubmit={function (e) {handleSubmit(e, props.token)}}>
+            <form onSubmit={function (e) {handleSubmit(e)}}>
                 <label htmlFor='userId'>User Id:</label>
 
                 <input type='text' id='userId' name='userId' maxLength='6' onChange={function (e) {

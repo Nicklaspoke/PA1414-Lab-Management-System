@@ -14,7 +14,9 @@ const book = props => (
     <MainUserLayout>
         <div className='equipmentForm slide-in-right'>
             <h1>Book: {props.equipment.name}</h1>
-            <form onSubmit={function (e) {handleSubmit(e, props.token, props-equipment.barcode)}}>
+            <form onSubmit={function (e) {
+                handleSubmit(e, props.token, props.equipment.barcode)
+                }}>
                 <label htmlFor='barcode'>Barcode:</label>
                 <input type='text' id='barcode' name='barcode' value={props.equipment.barcode} readOnly></input>
 
