@@ -6,8 +6,6 @@
 'use strict';
 
 import Link from 'next/link';
-import AdminNav from './AdminNav';
-import cookies from 'next-cookies';
 
 const Navbar = () => (
     <div className="navbar">

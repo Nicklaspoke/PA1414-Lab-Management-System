@@ -2,7 +2,6 @@ import MainUserLayout from '../../../components/MainUserLayout';
 import { auth } from '../../../utils/auth';
 import config from '../../../config/config.json';
 import fetch from 'isomorphic-unfetch';
-import Link from 'next/link';
 import Router from 'next/router';
 
 let formData = {
