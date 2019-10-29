@@ -30,6 +30,10 @@ const Users = props => (
                                     <Link href='users/deactivate/[id]' as={`users/deactivate/${account.user_id}`}>
                                         <a>Deactivate Account</a>
                                     </Link>
+                                    <br />
+                                    <Link href='users/edit/[id]' as={`users/edit/${account.user_id}`}>
+                                        <a>Edit account role</a>
+                                    </Link>
                                 </td>
                             </tr>
                     </Link>

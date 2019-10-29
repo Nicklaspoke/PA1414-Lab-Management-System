@@ -7,7 +7,7 @@ The purpose of this application is to provide a frontend interface for student a
 # How to set up and run this
 
 To run and set up this application. You will need the following prerequisites
-* nodejs
+* nodejs 8.10 or higher
 * My [backend API](https://github.com/Nicklaspoke/PA1414-Lab-Management-System-Backend-API)
 * My [database setup](https://github.com/Nicklaspoke/PA1414-Lab-Management-System-Database-SQL) (also requiered for the backend)
 

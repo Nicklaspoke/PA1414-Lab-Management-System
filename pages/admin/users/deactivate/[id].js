@@ -14,11 +14,11 @@ const account = props => (
                 <h2>Account: {props.account.user_id}</h2>
                 <h3>User Id: {props.account.user_id}</h3>
                 <h3>Email: {props.account.email}</h3>
-                <button onClick={function () {
+                <button className='LeftButton submitStyle' onClick={function () {
                     handleSubmit('ok', props.account.user_id, props.token);
                 }}>Yes, Deactivate</button>
 
-                <button onClick={function () {
+                <button className='LeftButton submitStyle' onClick={function () {
                     Router.push('/admin/users');
                 }}>No, Take Me Back</button>
             </div>
