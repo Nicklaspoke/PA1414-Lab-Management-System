@@ -32,7 +32,7 @@ const Equipments = props => (
             </table>
 
             <Link href='equipment/addEquipment' as={'/equipment/addEquipment'}>
-                <button className='leftButton submitStyle slide-in-left'>Add New Equipment</button>
+                <button className='leftButton submitStyle slide-in-left'><p>Add New Equipment</p></button>
             </Link>
 
     </AdminMainLayout>

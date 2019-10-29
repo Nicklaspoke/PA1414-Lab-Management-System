@@ -18,6 +18,10 @@
     text-decoration: none;
 
     cursor: pointer;
+
+    p {
+        margin: 0;
+    }
 }
 
 .RightButton {
@@ -54,9 +58,9 @@
 }
 
 .submitStyle {
-    margin: 1rem 0.5rem;
+    margin: 5px;
     color: $fontColor;
-    padding: 0.8rem;
+    // padding: 0.8rem;
     font-family: $fontBody;
     cursor: pointer;
     background-color: $maneColor;
