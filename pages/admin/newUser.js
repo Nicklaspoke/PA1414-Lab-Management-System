@@ -40,28 +40,24 @@ const RegisterNewAccount = props => (
 
                 <input type='text' id='userId' name='userId' maxLength='6' onChange={function (e) {
                     formData.userId = e.target.value;
-                    console.log(formData.userId);
                 }} required></input>
 
                 <label htmlFor='password'>Password:</label>
 
                 <input type='password' id='password' name='password' onChange={function (e) {
                     formData.password = e.target.value;
-                    console.log(formData.password);
                 }} required></input>
 
                 <label htmlFor='confirmPassword'>Confirm Password:</label>
 
                 <input type='password' id='confirmPassword' name='confirmPassword' onChange={function (e) {
                     formData.confirmPassword = e.target.value;
-                    console.log(formData.confirmPassword);
                 }} required></input>
 
                 <label htmlFor='userId'>Email:</label>
 
                 <input type='email' id='email' name='email' onChange={function (e) {
                     formData.email = e.target.value;
-                    console.log(formData.email);
                 }} required></input>
 
 

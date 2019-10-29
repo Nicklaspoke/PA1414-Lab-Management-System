@@ -39,7 +39,7 @@ const booking = props => (
 
 booking.getInitialProps = async ctx => {
     let data;
-    console.log(ctx.query.id)
+
     const id = ctx.query.id;
     const token = await auth(ctx);
 
@@ -75,7 +75,7 @@ async function handleSubmit(action, id, token) {
     const data = {
         bookingId: id,
     };
-    console.log(action)
+
     const res = await fetch(`${config.apiAddr}/booking/${action}`, {
         body: JSON.stringify(data),
         headers: {

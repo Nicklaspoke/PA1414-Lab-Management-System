@@ -56,7 +56,6 @@ Bookings.getInitialProps = async ctx => {
     }).then(async function (responce) {
         bookingData = await responce.json();
 
-        console.log(bookingData);
     });
 
     data = {

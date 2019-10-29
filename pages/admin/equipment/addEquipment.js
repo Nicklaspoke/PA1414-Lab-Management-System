@@ -39,7 +39,6 @@ const addEquipment = props => (
                 <label htmlFor='name'>Name:</label>
                 <input type='text' id='name' name='name' onChange={function (e) {
                     formData.name = e.target.value;
-                    console.log(e.target.value)
                 }} required></input>
 
                 <label htmlFor='borrowTime'>Max Borrow Time (days):</label>
@@ -69,7 +68,6 @@ addEquipment.getInitialProps = async ctx => {
 async function handleSubmit(e, token) {
     errorDisplay.display = false;
     e.preventDefault();
-    console.log(formData);
 
     const res = await fetch(`${config.apiAddr}/equipment`, {
         body: JSON.stringify(formData),
@@ -81,7 +79,7 @@ async function handleSubmit(e, token) {
     });
 
     const data = await res.json();
-    console.log(data)
+
     if (data.errors) {
         errorDisplay.titel = data.errors['title'];
         errorDisplay.message = data.errors['details'];

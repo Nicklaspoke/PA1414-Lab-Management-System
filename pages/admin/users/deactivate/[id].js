@@ -27,7 +27,6 @@ const account = props => (
 
 account.getInitialProps = async ctx => {
     let data;
-    console.log(ctx.query)
     const id = ctx.query.id;
     const token = await auth(ctx);
 
@@ -49,7 +48,6 @@ account.getInitialProps = async ctx => {
             return account.user_id == id;
         })[0]
     }
-    console.log(data)
     return data;
 }
 
@@ -63,7 +61,6 @@ async function handleSubmit(action, id, token) {
     const data = {
         userId: id,
     };
-    console.log(id)
     const res = await fetch(`${config.apiAddr}/register`, {
         body: JSON.stringify(data),
         headers: {

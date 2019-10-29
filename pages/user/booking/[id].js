@@ -22,7 +22,6 @@ booking.getInitialProps = async ctx => {
     let data;
 
     const bookingId = ctx.query.id;
-    console.log(bookingId)
     const token = await auth(ctx);
 
     let bookings;

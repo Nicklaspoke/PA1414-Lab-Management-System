@@ -26,7 +26,6 @@ const account = props => (
 
 account.getInitialProps = async ctx => {
     let data;
-    console.log(ctx.query)
     const id = ctx.query.id;
     const token = await auth(ctx);
 
@@ -48,7 +47,6 @@ account.getInitialProps = async ctx => {
             return account.user_id == id;
         })[0]
     }
-    console.log(data)
     return data;
 }
 
@@ -60,8 +58,6 @@ account.getInitialProps = async ctx => {
  */
 async function handleSubmit(action, id, token) {
     const method = action == 'approve' ? 'PUT' : 'DELETE'
-    console.log(method);
-    console.log(action);
     const data = {
         userId: id,
     };

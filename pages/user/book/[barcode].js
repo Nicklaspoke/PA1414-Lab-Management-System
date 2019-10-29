@@ -63,7 +63,6 @@ book.getInitialProps = async ctx => {
 
 async function handleSubmit(e, token, barcode) {
     e.preventDefault();
-    console.log(formData);
     const data = {
         barcode: barcode,
         borrowTime: formData.borrowTime

@@ -37,7 +37,6 @@ const equipment = props => (
                 <label htmlFor='name'>Name:</label>
                 <input type='text' id='name' name='name' placeholder={props.equipment.name} onChange={function (e) {
                     formData.name = e.target.value;
-                    console.log(e.target.value)
                 }}></input>
 
                 <label htmlFor='borrowTime'>Max Borrow Time (days):</label>
@@ -79,14 +78,12 @@ equipment.getInitialProps = async ctx => {
     formData.barcode = barcode;
     formData.name = data.equipment.name;
     formData.borrowTime = data.equipment.borrow_time;
-    console.log(formData);
     return data;
 }
 
 async function handleSubmit(e, token) {
     errorDisplay.display = false;
     e.preventDefault();
-    console.log(formData);
 
     const res = await fetch(`${config.apiAddr}/equipment`, {
         body: JSON.stringify(formData),

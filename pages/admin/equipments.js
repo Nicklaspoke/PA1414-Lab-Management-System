@@ -19,7 +19,6 @@ const Equipments = props => (
                     <th>Borrow Time (days)</th>
                 </tr>
                 </thead>
-                {console.log(props.equipments)}
                 {props.equipments.map(equipment => (
                     <Link href='equipment/[id]' as={`equipment/${equipment.barcode}`}>
                             <tr>

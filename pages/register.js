@@ -6,7 +6,6 @@
 'use strict';
 
 import MainLayout from '../components/MainLayout';
-import Modal from '../components/registerModal'
 import config from '../config/config.json';
 import fetch from 'isomorphic-unfetch';
 import Router from 'next/Router';
@@ -61,29 +60,25 @@ const register = props => (
 
                 <input type='text' id='userId' name='userId' maxLength='6' onChange={function (e) {
                     formData.userId = e.target.value;
-                    console.log(formData.userId);
                 }} required></input>
 
                 <label htmlFor='password'>Password:</label>
 
                 <input type='password' id='password' name='password' onChange={function (e) {
                     formData.password = e.target.value;
-                    console.log(formData.password);
-                }} required></input>
+                                    }} required></input>
 
                 <label htmlFor='confirmPassword'>Confirm Password:</label>
 
                 <input type='password' id='confirmPassword' name='confirmPassword' onChange={function (e) {
                     formData.confirmPassword = e.target.value;
-                    console.log(formData.confirmPassword);
-                }} required></input>
+                                    }} required></input>
 
                 <label htmlFor='userId'>Email:</label>
 
                 <input type='email' id='email' name='email' onChange={function (e) {
                     formData.email = e.target.value;
-                    console.log(formData.email);
-                }} required></input>
+                                    }} required></input>
                 <br />
                 <input type="checkbox" name='userAggrement' required /> I have read and aggree to the <Link href='register' onClick={aggrement.display = true}><a>User aggrement</a></Link>
                 <input className='submitButton' type="submit" value='Apply'></input>

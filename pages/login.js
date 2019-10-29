@@ -43,14 +43,12 @@ const login = () => (
 
             <input type='text' id='userId' name='userId' maxLength='6' onChange={function (e) {
                 formData.userId = e.target.value;
-                console.log(formData.userId);
             }} required></input>
 
             <label htmlFor='password'>Password</label>
 
             <input type='password' id='password' name='password' onChange={function (e) {
                 formData.password = e.target.value;
-                console.log(formData.password);
             }} required></input>
             <br />
             <input className='submitButton' type="submit" value='Login'></input>
