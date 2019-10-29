@@ -4,7 +4,7 @@
  * @author Nicklas König (niko14)
  */
 
-import Link from 'next/Link';
+import Link from 'next/link';
 
 const Header = () => (
     <div className="headerBanner">
