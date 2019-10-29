@@ -8,7 +8,7 @@
 import MainLayout from '../components/MainLayout';
 import config from '../config/config.json';
 import fetch from 'isomorphic-unfetch';
-import Router from 'next/Router';
+import Router from 'next/router';
 import Link from 'next/link';
 
 let formData = {

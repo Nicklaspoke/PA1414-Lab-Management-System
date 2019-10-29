@@ -7,7 +7,7 @@ import { accountRoleToString } from '../../utils/utils';
 import config from '../../config/config.json';
 import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
-import { Router } from 'next/Router';
+import { Router } from 'next/router';
 
 const Users = props => (
     <AdminMainLayout>

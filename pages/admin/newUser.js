@@ -9,7 +9,7 @@ import MainAdminLayout from '../../components/MainAdminLayout';
 import { auth } from '../../utils/auth';
 import config from '../../config/config.json';
 import fetch from 'isomorphic-unfetch';
-import Router from 'next/Router';
+import Router from 'next/router';
 
 let formData = {
     userId: "",
